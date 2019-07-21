@@ -37,6 +37,7 @@ class CalculatorViewController: UIViewController {
     @IBAction func operatorTapped(_ sender: UIButton) {
         if previousAnswer != nil {
             brain?.operand1String = previousAnswer!
+            previousAnswer = nil
         }
         if let operatorPressed = sender.titleLabel?.text {
             brain?.setOperator(operatorPressed)
@@ -58,6 +59,7 @@ class CalculatorViewController: UIViewController {
     
     @IBAction func clearTapped(_ sender: UIButton) {
         outputLabel.text = "0"
+        previousAnswer = nil
         clearTransaction()
     }
     
