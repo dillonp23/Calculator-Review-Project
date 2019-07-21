@@ -17,6 +17,7 @@ class CalculatorViewController: UIViewController {
     // MARK: - Properties
     
     var brain: CalculatorBrain?
+    var previousAnswer: String?
     
     // MARK: - Functions
     
@@ -34,6 +35,9 @@ class CalculatorViewController: UIViewController {
     }
     
     @IBAction func operatorTapped(_ sender: UIButton) {
+        if previousAnswer != nil {
+            brain?.operand1String = previousAnswer!
+        }
         if let operatorPressed = sender.titleLabel?.text {
             brain?.setOperator(operatorPressed)
         }
@@ -42,8 +46,14 @@ class CalculatorViewController: UIViewController {
     @IBAction func equalTapped(_ sender: UIButton) {
         if let result = brain?.calculateIfPossible() {
         outputLabel.text = result
-        }
         brain = CalculatorBrain()
+            if outputLabel.text != "0" {
+                previousAnswer = result
+            } else {
+                previousAnswer = nil
+            }
+        }
+        
     }
     
     @IBAction func clearTapped(_ sender: UIButton) {
