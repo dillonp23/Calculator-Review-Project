@@ -45,6 +45,22 @@ class CalculatorBrain {
             returnString = "Error"
         }
         
+        guard let double1 = Double(operand1String) else { return nil }
+        guard let double2 = Double(operand2String) else { return nil }
+        
+        if let operatorType = operatorType {
+            switch operatorType {
+                case .addition:
+                        returnString = "\(double1 + double2)"
+                case .subtraction:
+                        returnString = "\(double1 - double2)"
+                case .division:
+                        returnString = "\(double1 / double2)"
+                case .multiplication:
+                        returnString = "\(double1 * double2)"
+                }
+            }
+        
         return returnString
     }
 }
