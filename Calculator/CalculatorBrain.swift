@@ -19,6 +19,7 @@ class CalculatorBrain {
     
     func addOperandDigit(_ digit: String) -> String {
         return digit
+        
     }
     
     func setOperator(_ operatorString: String) {
