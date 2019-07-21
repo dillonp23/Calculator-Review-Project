@@ -57,9 +57,26 @@ class CalculatorViewController: UIViewController {
     }
     
     @IBAction func clearTapped(_ sender: UIButton) {
-        clearTransaction()
         outputLabel.text = "0"
+        clearTransaction()
     }
+    
+    
+//    @IBAction func posNegButtonPressed(_ sender: Any) {
+//        if outputLabel.text != "0" {
+//            let answer = outputLabel.text
+//            if let doubleAnswer = Double(answer!) {
+//                let result = doubleAnswer * -1.0
+//                outputLabel.text = "\(result)"
+//                brain?.operand1String = "\(result)"
+//            }
+//
+//        }
+//    }
+    
+    @IBAction func percentButtonPressed(_ sender: Any) {
+    }
+    
     
     // MARK: - Private
     
