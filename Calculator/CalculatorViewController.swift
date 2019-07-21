@@ -40,6 +40,9 @@ class CalculatorViewController: UIViewController {
             previousAnswer = nil
         }
         if let operatorPressed = sender.titleLabel?.text {
+            if let operandString1 = outputLabel.text {
+                brain?.operand1String = operandString1
+            }
             brain?.setOperator(operatorPressed)
         }
     }
