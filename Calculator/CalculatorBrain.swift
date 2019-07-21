@@ -60,6 +60,10 @@ class CalculatorBrain {
                 }
             }
         
+        if returnString == "0.0" {
+            returnString = "0"
+        }
+        
         return returnString
     }
 }

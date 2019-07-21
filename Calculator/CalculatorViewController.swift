@@ -74,6 +74,7 @@ class CalculatorViewController: UIViewController {
                 let result = doubleAnswer * -1.0
                 outputLabel.text = "\(result)"
                 brain?.operand1String = "\(result)"
+                brain = CalculatorBrain()
             }
 
         }
