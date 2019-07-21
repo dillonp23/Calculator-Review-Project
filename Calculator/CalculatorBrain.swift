@@ -13,6 +13,7 @@ enum OperatorType: String {
     case subtraction = "−"
     case multiplication = "×"
     case division = "÷"
+    case percent = "%"
 }
 
 class CalculatorBrain {
@@ -57,6 +58,8 @@ class CalculatorBrain {
                         returnString = "\(double1 / double2)"
                 case .multiplication:
                         returnString = "\(double1 * double2)"
+                case .percent:
+                        returnString = "\(double1 / 100)"
                 }
             }
         

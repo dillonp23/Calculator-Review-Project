@@ -80,16 +80,22 @@ class CalculatorViewController: UIViewController {
         }
     }
     
-    @IBAction func percentButtonPressed(_ sender: Any) {
-        if outputLabel.text != "0" {
-            let percentAnswer = outputLabel.text
-            if let doublePercentAnswer = Double(percentAnswer!) {
-                let percentResult = doublePercentAnswer / 100
-                outputLabel.text = "\(percentResult)"
-                brain = CalculatorBrain()
-            }
-        }
-    }
+//    @IBAction func percentButtonPressed(_ sender: UIButton) {
+//        if outputLabel.text != "0" {
+//            let percentAnswer = outputLabel.text
+//            if let doublePercentAnswer = Double(percentAnswer!) {
+//                let percentResult = doublePercentAnswer / 100
+//                outputLabel.text = "\(percentResult)"
+//                brain = CalculatorBrain()
+//                if let operatorPressed = sender.titleLabel?.text {
+//                    if let operandString1 = outputLabel.text {
+//                        brain?.operand1String = operandString1
+//                    }
+//                    brain?.setOperator(operatorPressed)
+//                }
+//            }
+//        }
+//    }
     
     
     // MARK: - Private
