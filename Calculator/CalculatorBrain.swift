@@ -32,9 +32,19 @@ class CalculatorBrain {
     
     func setOperator(_ operatorString: String) {
         operatorType = OperatorType(rawValue: operatorString)
+        print(operatorType!.rawValue)
     }
     
     func calculateIfPossible() -> String? {
-     return nil
+        var returnString: String?
+        if operand1String == "" || operand2String == "" {
+            returnString = "0"
+        }
+        
+        if operatorType?.rawValue == "÷" && operand2String == "0" {
+            returnString = "Error"
+        }
+        
+        return returnString
     }
 }

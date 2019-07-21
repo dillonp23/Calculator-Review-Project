@@ -40,13 +40,14 @@ class CalculatorViewController: UIViewController {
     }
     
     @IBAction func equalTapped(_ sender: UIButton) {
-        outputLabel.text = brain?.calculateIfPossible()
+        if let result = brain?.calculateIfPossible() {
+        outputLabel.text = result
+        }
     }
     
     @IBAction func clearTapped(_ sender: UIButton) {
         clearTransaction()
         outputLabel.text = "0"
-        
     }
     
     // MARK: - Private
